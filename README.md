@@ -11,29 +11,36 @@
 <p>- nos cadastros que possuam muitos passos;</p>
 <p>- na exibição de blocos de código complexos, como, por exemplo, carrosséis, gráficos.</p>
 
-* em alguns casos, é preciso inicializar o plugin dentro do componente.  No caso do Carousel do Bootstrap, por exemplo, abaixo do código HTML é preciso adicionar o script abaixo:
+<p>Obs.: em alguns casos, é preciso inicializar o plugin dentro do componente.  No caso do Carousel do Bootstrap, por exemplo, abaixo do código HTML é preciso adicionar o script abaixo:</p>
+
 <code>
 <script type="text/javascript">
   $('.carousel').carousel();
 </script>
 </code>
-No caso do Modal do bootstrap, é preciso fechá-lo no método beforeUpdate caso ele esteja aberto:
+
+<p>No caso do Modal do bootstrap, é preciso fechá-lo no método beforeUpdate caso ele esteja aberto:</p>
+<code>
 act.ajaxComponent("id_do_ajax_componente").beforeUpdate = function(){
 	$('.modal').modal('hide');
 };
+</code>
 
 <h2>Quando não usar</h2>
-Se os dados gerados pelo servidor serão lidos em diversas plataformas (aplicativo + navegador, por exemplo), cada plataforma terá sua forma específica de criação da interface.  Nesses casos é preferível transferir o dado sem HTML e por isso nesse contexto o uso de Act não se aplica.
+<p>Se os dados gerados pelo servidor serão lidos em diversas plataformas (aplicativo + navegador, por exemplo), cada plataforma terá sua forma específica de criação da interface.  Nesses casos é preferível transferir o dado sem HTML e por isso nesse contexto o uso de Act não se aplica.</p>
 
 <h2>Exemplo Hello World!</h2>
 
 hello.php
 -----------
+<code>
 <h1>Hello World!</h1>
+</code>
 
 
 index.php
 -----------
+<code>
 <!doctype html>
 <html>
     <body>
@@ -47,16 +54,17 @@ index.php
 	
 	</body>
 </html>
-
+</code>
 
 <h2>Compatibilidade</h2>
 
 <h3>Posso colocar JS no componente?</h3>
-Pode.  A restrição é o uso de eventos em tags HTML.  
-
-O código abaixo não funciona:
+<p>Pode.  A restrição é o uso de eventos em tags HTML.</p>
+<p>O código abaixo não funciona:</p>
 
 componente.php
+--------------
+<code>
 <div onclick="hello();">Diga hello</div>
 
 <script type="text/javascript">
@@ -64,13 +72,16 @@ componente.php
 		alert("hello");
 	}
 </script>
-
-Já a versão seguinte não apresenta problemas:
+</code>
+<p>Já a versão seguinte não apresenta problemas:</p>
 
 componente.php
+--------------
+<code>
 <div id="diga_hello">Diga hello</div>
 <script type="text/javascript">
 	document.getElementById("diga_hello").onclick = function(){
 		alert("hello");
 	};
 </script>
+</code>
