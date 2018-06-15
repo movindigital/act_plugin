@@ -1,22 +1,22 @@
 <h1>Act - Ajax Component Trasactions</h1>
 
 <h2>O que é</h2>
-Plugin JS para criação de componentes Ajax.
-A ideia é reduzir o uso de JavaScript transferindo diretamente HTML do servidor para o cliente.  Com o uso de Act é possível trocas de dados escrevendo apenas o código de inicialização do plugin e as tags dos componentes.
-Ao invés de ter uma página grande e complexa, act permite ter uma página grande com pequenos componentes responsáveis por tarefas específicas.  Isso torna a manutenção do código muito mais simples.
+<p>Plugin JS para criação de componentes Ajax.</p>
+<p>A ideia é reduzir o uso de JavaScript transferindo diretamente HTML do servidor para o cliente.  Com o uso de Act é possível trocas de dados escrevendo apenas o código de inicialização do plugin e as tags dos componentes.</p>
+<p>Ao invés de ter uma página grande e complexa, act permite ter uma página grande com pequenos componentes responsáveis por tarefas específicas.  Isso torna a manutenção do código muito mais simples.</p>
 
 <h2>Quando usar</h2>
-- na criação de formulários de cadastro com validação do lado servidor;
-- nas listagens, com ou sem filtros/ordenações/paginação;
-- nos cadastros que possuam muitos passos;
-- na exibição de blocos de código complexos, como, por exemplo, carrosséis, gráficos*.
+<p>- na criação de formulários de cadastro com validação do lado servidor;</p>
+<p>- nas listagens, com ou sem filtros/ordenações/paginação;</p>
+<p>- nos cadastros que possuam muitos passos;</p>
+<p>- na exibição de blocos de código complexos, como, por exemplo, carrosséis, gráficos.</p>
 
 * em alguns casos, é preciso inicializar o plugin dentro do componente.  No caso do Carousel do Bootstrap, por exemplo, abaixo do código HTML é preciso adicionar o script abaixo:
-
-<script type="text/text/javascript">
+<code>
+<script type="text/javascript">
   $('.carousel').carousel();
 </script>
-
+</code>
 No caso do Modal do bootstrap, é preciso fechá-lo no método beforeUpdate caso ele esteja aberto:
 act.ajaxComponent("id_do_ajax_componente").beforeUpdate = function(){
 	$('.modal').modal('hide');
